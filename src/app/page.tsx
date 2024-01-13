@@ -5,14 +5,14 @@ import { TRANSACTIONS } from "@/app/transactions/metadata";
 import Page from "@/components/system/page";
 import { Spacer } from "@/components/system/spacer";
 import { DataTable } from "@/components/system/table";
-import { H1, H2, H3, H4, H5, H6 } from "@/components/system/typography";
+import { H1, H2, H3, H5, H6 } from "@/components/system/typography";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useChart, useLatestBlocks, useLatestTxs } from "@/utils";
 import { AreaChart } from "@tremor/react";
 import {
   ArrowLeftRight,
-  ArrowRight,
   Container,
   Gauge,
   Globe,
@@ -28,11 +28,8 @@ export default function Dashboard() {
   const { data: dataLatestTxs, header: headerLatestTxs } = useLatestTxs();
 
   return (
-    <Page>
-      <H1>Dashboard</H1>
-      <Spacer />
-
-      <div className="flex space-x-5 rounded-xl border p-2">
+    <Page title="Dashboard">
+      <Card className="flex space-x-5 p-2">
         <div className="flex grow flex-col">
           <div className="flex gap-2 p-2">
             <ArrowLeftRight className="w-4" />
@@ -128,7 +125,7 @@ export default function Dashboard() {
             yAxisWidth={40}
           />
         </div>
-      </div>
+      </Card>
 
       <Spacer />
       <Spacer />
@@ -150,9 +147,7 @@ export default function Dashboard() {
             </div>
           </div>
           <Spacer small />
-          <div>
-            <DataTable columns={headerLatestBlocks} data={dataLatestBlocks} />
-          </div>
+          <DataTable columns={headerLatestBlocks} data={dataLatestBlocks} />
         </div>
 
         <div className="col-span-4">
@@ -172,9 +167,7 @@ export default function Dashboard() {
             </div>
           </div>
           <Spacer small />
-          <div>
-            <DataTable columns={headerLatestTxs} data={dataLatestTxs} />
-          </div>
+          <DataTable columns={headerLatestTxs} data={dataLatestTxs} />
         </div>
       </div>
     </Page>

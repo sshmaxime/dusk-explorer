@@ -25,7 +25,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/utils/cn";
-import { myAppClasse } from "@/utils/constants/styles";
+import { myAppStyles } from "@/utils/constants/styles";
 import { BLOCKS } from "@/app/blocks/metadata";
 import { TRANSACTIONS } from "@/app/transactions/metadata";
 
@@ -41,7 +41,7 @@ export default function Navbar() {
     <div className="relative z-50">
       <Banner banner={banner} />
 
-      <header className={cn("flex h-14 w-full backdrop-blur", myAppClasse)}>
+      <header className={cn("flex h-14 w-full backdrop-blur", myAppStyles)}>
         <Link href={"/"} style={{ display: "flex", alignSelf: "center" }}>
           <Image
             src={Logo}

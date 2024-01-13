@@ -20,6 +20,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import React, { ComponentProps } from "react";
+import { Card } from "@/components/ui/card";
 
 type Props = {
   paginationOptions?: ComponentProps<typeof DataTablePagination>["options"];
@@ -54,8 +55,8 @@ export function DataTable<TData extends RowProps, TValue>({
   });
 
   return (
-    <div className="space-y-1">
-      <div className="rounded-md border">
+    <div className="space-y-2">
+      <Card>
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -104,10 +105,8 @@ export function DataTable<TData extends RowProps, TValue>({
             )}
           </TableBody>
         </Table>
-      </div>
-      <div>
-        <DataTablePagination table={table} options={paginationOptions} />
-      </div>
+      </Card>
+      <DataTablePagination table={table} options={paginationOptions} />
     </div>
   );
 }

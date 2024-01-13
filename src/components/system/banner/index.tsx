@@ -1,7 +1,7 @@
 import { useStore } from "@/store";
 import { useClient } from "@/utils";
 import { cn } from "@/utils/cn";
-import { myAppClasse } from "@/utils/constants/styles";
+import { myAppStyles } from "@/utils/constants/styles";
 import { Banner as BannerType } from "@/utils/types";
 import { X } from "lucide-react";
 
@@ -18,10 +18,10 @@ export const Banner = ({ banner }: Props) => {
   return (
     <header
       className={`${
-        isOpen ? "h-8" : "h-0 opacity-0"
+        isOpen ? "h-8" : "h-0"
       } z-50 flex w-full items-center bg-muted text-sm backdrop-blur duration-500`}
     >
-      <div className={cn("flex w-full flex-row justify-between", myAppClasse)}>
+      <div className={cn("flex w-full flex-row justify-between", myAppStyles)}>
         <div className="w-20"></div>
         <div className="flex flex-row justify-center">
           <p className="text-center">{banner.message}</p>

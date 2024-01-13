@@ -7,14 +7,15 @@ import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Check, Cross, Loader2, Plus, XCircle } from "lucide-react";
+import { Check, Loader2, Plus } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
 import { BLOCK } from "@/app/blocks/[id]/metadata";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { TRANSACTION } from "@/app/transactions/[id]/metadata";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import Tooltip from "@/components/system/tooltip";
 
 const shortcuts: { name: string; shortcut: string }[] = [
   { name: "Todo", shortcut: "Todo" },
@@ -436,8 +437,8 @@ export const useLatestTxs = () => {
           <>
             {block.status === "Success" && (
               <Badge
-                variant="default"
-                className="rounded-full bg-emerald-500 bg-opacity-20 p-1 text-emerald-500 hover:bg-inherit"
+                variant="outline"
+                className="rounded-full bg-emerald-500 bg-opacity-20 p-1 text-emerald-500"
               >
                 <Check className="h-3 w-3" />
               </Badge>
@@ -445,8 +446,8 @@ export const useLatestTxs = () => {
 
             {block.status === "Pending" && (
               <Badge
-                variant="default"
-                className="rounded-full bg-gray-500 bg-opacity-20 p-1 text-gray-500 hover:bg-inherit"
+                variant="outline"
+                className="rounded-full bg-gray-500 bg-opacity-20 p-1 text-gray-500 "
               >
                 <Loader2 className="h-3 w-3 animate-spin" />
               </Badge>
@@ -454,8 +455,8 @@ export const useLatestTxs = () => {
 
             {block.status === "Fail" && (
               <Badge
-                variant="default"
-                className="rounded-full bg-rose-500 bg-opacity-20 p-1 text-rose-500 hover:bg-inherit"
+                variant="outline"
+                className="rounded-full bg-rose-500 bg-opacity-20 p-1 text-rose-500 "
               >
                 <Plus className="h-3 w-3 rotate-45" />
               </Badge>

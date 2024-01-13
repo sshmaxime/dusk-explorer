@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import Navbar from "@/app/(components)/navbar";
+import Footer from "@/app/(components)/footer";
 import { ThemeProvider } from "@/config/theme";
 import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
@@ -32,6 +33,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Navbar />
           <main>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

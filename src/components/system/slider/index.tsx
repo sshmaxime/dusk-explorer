@@ -1,7 +1,7 @@
-import { H1, H4 } from "@/components/system/typography";
+import { H1, H3 } from "@/components/system/typography";
 import { Input } from "@/components/ui/input";
 import { Slider as UISlider } from "@/components/ui/slider";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 let USDollar = new Intl.NumberFormat("fr-FR");
 
@@ -43,7 +43,7 @@ export const Slider = ({
   return (
     <div>
       <div className="flex h-full items-end justify-between">
-        {small ? <H4>{title}</H4> : <H1>{title}</H1>}
+        {small ? <H3>{title}</H3> : <H1>{title}</H1>}
         <div className="relative">
           <Input
             placeholder=""

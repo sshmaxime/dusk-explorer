@@ -1,14 +1,24 @@
 "use client";
 
 import Page from "@/components/system/page";
-import { Spacer } from "@/components/system/spacer";
-import { H1 } from "@/components/system/typography";
+import { DataTable } from "@/components/system/table";
+import { useLatestTxs } from "@/utils";
 
 export default function Transactions() {
+  const { data: dataLatestTxs, header: headerLatestTxs } = useLatestTxs();
+
   return (
-    <Page>
-      <H1>Transactions</H1>
-      <Spacer />
+    <Page title="Transactions">
+      <DataTable
+        columns={headerLatestTxs}
+        data={dataLatestTxs}
+        paginationOptions={{
+          showPageOf: true,
+          showPageArrows: true,
+          showRowsPerPage: true,
+          showSelectedRows: true,
+        }}
+      />
     </Page>
   );
 }
