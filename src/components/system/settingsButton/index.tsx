@@ -15,7 +15,7 @@ export function SettingsButton() {
       <Button
         variant="ghost"
         size="icon"
-        className={cn("duration-700", isRoute(SETTINGS.href) && "bg-accent")}
+        className={cn(isRoute(SETTINGS.href) && "bg-accent")}
       >
         <Settings className="h-[1.2rem] w-[1.2rem] transition-all" />
       </Button>

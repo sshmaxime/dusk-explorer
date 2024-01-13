@@ -1,10 +1,15 @@
 "use client";
 
-import { px } from "@/config/theme";
+import { cn } from "@/utils/cn";
+import { myAppClasse } from "@/utils/constants/styles";
 import { withChildren } from "@/utils/types";
 
-const Page = ({ children }: withChildren) => {
-  return <div className={`mb-5 mt-5 ${px}`}>{children}</div>;
+type Props = {
+  full?: boolean;
+};
+
+const Page = ({ children, full = false }: Props & withChildren) => {
+  return <div className={cn("my-8", full ? "" : myAppClasse)}>{children}</div>;
 };
 
 export default Page;

@@ -4,5 +4,5 @@ type Props = {
 };
 
 export const Spacer = ({ small, extraSmall }: Props) => {
-  return <div className={small ? "p-1" : extraSmall ? "p-[2px]" : "p-2"} />;
+  return <div className={small ? "p-2" : extraSmall ? "p-[2px]" : "p-4"} />;
 };

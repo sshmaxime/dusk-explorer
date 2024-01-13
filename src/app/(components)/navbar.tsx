@@ -5,38 +5,65 @@ import { SettingsButton } from "@/components/system/settingsButton";
 import { Separator } from "@/components/ui/separator";
 import { useBanner, useClient } from "@/utils";
 
+import { DASHBOARD } from "@/app/metadata";
+import Logo from "@/assets/logo-full.svg";
 import { Banner } from "@/components/system/banner";
+import { Combobox } from "@/components/system/combobox";
 import { ThemeToggler } from "@/components/system/themeToggler";
 import {
   NavigationMenu,
-  NavigationMenuLink,
   NavigationMenuItem as NavigationMenuItemPrimitive,
+  NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 import {
   ListItem,
   NavigationMenuItem,
   customNavigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu-extended";
-import { DASHBOARD } from "@/app/metadata";
-import Logo from "@/assets/logo.svg";
-import { px } from "@/config/theme";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { cn } from "@/utils/cn";
+import { myAppClasse } from "@/utils/constants/styles";
+import { BLOCKS } from "@/app/blocks/metadata";
+import { TRANSACTIONS } from "@/app/transactions/metadata";
 
-const NavigationArray = [DASHBOARD];
+const NavigationArray = [DASHBOARD, BLOCKS, TRANSACTIONS];
 
 export default function Navbar() {
   const { fullRoute } = useClient();
   const banner = useBanner();
 
+  const [network, setNetwork] = useState("Mainnet");
+
   return (
     <div className="relative z-50">
       <Banner banner={banner} />
 
-      <header className={`flex h-14 w-full backdrop-blur ${px}`}>
-        <Image src={Logo} width={70} alt="" />
+      <header className={cn("flex h-14 w-full backdrop-blur", myAppClasse)}>
+        <Link href={"/"} style={{ display: "flex", alignSelf: "center" }}>
+          <Image
+            src={Logo}
+            style={{ width: 70, height: "auto" }}
+            alt=""
+            className="dark:invert"
+            quality={100}
+          />
+        </Link>
+
+        <Separator
+          orientation="vertical"
+          className="ml-5 mr-4 h-[50%] translate-y-1/2"
+        />
+
+        <Combobox
+          className="self-center"
+          items={[{ value: "Mainnet", label: "Mainnet" }]}
+          searching="Network"
+          value={network}
+          onChange={setNetwork}
+        />
 
         <Separator
           orientation="vertical"
@@ -114,14 +141,17 @@ export default function Navbar() {
         </NavigationMenu>
 
         <div className="flex flex-grow items-center justify-end gap-2">
-          <SearchBar />
-          <span className="ml-3 text-gray-300 dark:text-gray-800">|</span>
+          <SearchBar
+            text="Search anything ..."
+            placeholder="Address / Txn Hash / Block / Token / Domain Name"
+          />
+          <Separator orientation="vertical" className="ml-5 mr-4 h-[50%]" />
           <SettingsButton />
           <ThemeToggler />
         </div>
       </header>
 
-      <Separator className="mb-12" />
+      <Separator />
     </div>
   );
 }

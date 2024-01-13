@@ -15,7 +15,12 @@ import {
 import { TextIcon } from "@/components/system/textIcon";
 import { useClient } from "@/utils";
 
-export function SearchBar() {
+type Props = {
+  text: string;
+  placeholder: string;
+};
+
+export function SearchBar({ text, placeholder }: Props) {
   const { shortcuts } = useClient();
   const [open, setOpen] = React.useState(false);
 
@@ -38,7 +43,7 @@ export function SearchBar() {
         className="group flex h-9 gap-5 px-2 text-[13px] text-muted-foreground"
         onClick={() => setOpen(true)}
       >
-        Search something ...
+        {text}
         <span className="flex gap-1">
           <TextIcon data="⌘" />
           <TextIcon data="K" />
@@ -46,7 +51,7 @@ export function SearchBar() {
       </Button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search something ..." />
+        <CommandInput placeholder={placeholder} />
 
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>

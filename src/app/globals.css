@@ -55,6 +55,7 @@
 @layer base {
   * {
     @apply border-border;
+    font-variant-ligatures: no-contextual;
   }
   body {
     @apply bg-background text-foreground;
