@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { withChildren } from "@/utils/types";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
+import { Spacer } from "@/components/system/spacer";
 
 type Props = {
   params: {
@@ -17,7 +18,7 @@ type TransactionItemProps = {
   title: string;
 } & withChildren;
 
-export const TransactionItem = ({ title, children }: TransactionItemProps) => {
+const TransactionItem = ({ title, children }: TransactionItemProps) => {
   return (
     <div className="grid grid-flow-col grid-cols-3">
       <div className="col-span-1">
@@ -40,7 +41,7 @@ export default function Transaction({ params: { id } }: Props) {
           </TabsTrigger>
         </TabsList>
 
-        <div className="h-2" />
+        <Spacer extraSmall />
 
         <Card className="p-4">
           <TabsContent value="Overview">

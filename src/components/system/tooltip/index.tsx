@@ -10,10 +10,12 @@ type Props = { text: string } & withChildren;
 
 const Tooltip = ({ text, children }: Props) => {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={300}>
       <TooltipPrimitive>
-        <TooltipTrigger>{children}</TooltipTrigger>
-        <TooltipContent>{text}</TooltipContent>
+        <TooltipTrigger className="hover:cursor-default">
+          {children}
+        </TooltipTrigger>
+        <TooltipContent className="max-w-xs p-3 text-xs">{text}</TooltipContent>
       </TooltipPrimitive>
     </TooltipProvider>
   );
