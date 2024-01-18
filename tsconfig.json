@@ -19,7 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"]
     }
   },
   "include": [
@@ -27,8 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/(core)/tools/simulation/loan",
-    "src/app/(core)/tools/simulation/loan-capacity"
+    "app/(core)/tools/simulation/loan",
+    "app/(core)/tools/simulation/loan-capacity"
   ],
   "exclude": ["node_modules"]
 }
