@@ -129,6 +129,7 @@ export default function Dashboard() {
 
       <Spacer />
       <Spacer />
+
       <div className="grid grid-cols-7 gap-16">
         <div className="col-span-3">
           <div className="flex justify-between">

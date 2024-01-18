@@ -24,6 +24,7 @@ const reset = `
   bg-transparent 
   hover:bg-transparent
   outline-none
+  h-auto
   `;
 
 const alpha = `
@@ -53,16 +54,14 @@ const alpha = `
 `;
 
 const customNavigationMenuTriggerStyle = ({ activated: actived }: Props) =>
-  cva(
-    [
-      navigationMenuTriggerStyle(),
-      reset,
-      alpha,
-      actived
-        ? "text-primary before:hover:bg-primary before:scale-x-100 before:bg-primary data-[state=open]:before:bg-primary data-[state=closed]:text-primary"
-        : "text-muted-foreground",
-    ].join(" "),
-  )();
+  cn(
+    navigationMenuTriggerStyle(),
+    reset,
+    alpha,
+    actived
+      ? "text-primary before:hover:bg-primary before:scale-x-100 before:bg-primary data-[state=open]:before:bg-primary data-[state=closed]:text-primary"
+      : "text-muted-foreground",
+  );
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,

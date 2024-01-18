@@ -12,6 +12,7 @@ type Props = {
   subtitle?: string;
   separator?: boolean;
   full?: boolean;
+  marginTop?: boolean;
 };
 
 const Page = ({
@@ -19,6 +20,7 @@ const Page = ({
   title,
   subtitle,
   separator,
+  marginTop,
   full = false,
 }: Props & withChildren) => {
   return (
@@ -43,6 +45,8 @@ const Page = ({
       ) : (
         <Spacer />
       )}
+
+      {marginTop && <div className="h-10" />}
 
       {children}
     </div>

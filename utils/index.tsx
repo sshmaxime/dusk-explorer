@@ -438,7 +438,7 @@ export const useLatestTxs = () => {
             {block.status === "Success" && (
               <Badge
                 variant="outline"
-                className="rounded-full bg-emerald-500 bg-opacity-20 p-1 text-emerald-500"
+                className="rounded-full border-transparent bg-emerald-500 bg-opacity-20 p-1 text-emerald-500"
               >
                 <Check className="h-3 w-3" />
               </Badge>
@@ -447,7 +447,7 @@ export const useLatestTxs = () => {
             {block.status === "Pending" && (
               <Badge
                 variant="outline"
-                className="rounded-full bg-gray-500 bg-opacity-20 p-1 text-gray-500 "
+                className="rounded-full border-transparent bg-gray-500 bg-opacity-20 p-1 text-gray-500"
               >
                 <Loader2 className="h-3 w-3 animate-spin" />
               </Badge>
@@ -456,7 +456,7 @@ export const useLatestTxs = () => {
             {block.status === "Fail" && (
               <Badge
                 variant="outline"
-                className="rounded-full bg-rose-500 bg-opacity-20 p-1 text-rose-500 "
+                className="rounded-full border-transparent bg-rose-500 bg-opacity-20 p-1 text-rose-500 "
               >
                 <Plus className="h-3 w-3 rotate-45" />
               </Badge>
