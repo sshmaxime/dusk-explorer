@@ -32,6 +32,8 @@ const Page = ({
         <>
           <Spacer small />
           <Separator />
+          <Spacer small />
+          <Spacer extraSmall />
         </>
       ) : subtitle ? (
         <>

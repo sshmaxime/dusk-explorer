@@ -1,15 +1,5 @@
 "use client";
 
-import { BLOCKS } from "./blocks/metadata";
-import { TRANSACTIONS } from "./transactions/metadata";
-import Page from "../components/system/page";
-import { Spacer } from "../components/system/spacer";
-import { DataTable } from "../components/system/table";
-import { H1, H2, H3, H5, H6 } from "../components/system/typography";
-import { Button } from "../components/ui/button";
-import { Card } from "../components/ui/card";
-import { Separator } from "../components/ui/separator";
-import { useChart, useLatestBlocks, useLatestTxs } from "../utils";
 import { AreaChart } from "@tremor/react";
 import {
   ArrowLeftRight,
@@ -20,6 +10,16 @@ import {
   Network,
 } from "lucide-react";
 import Link from "next/link";
+import Page from "../components/system/page";
+import { Spacer } from "../components/system/spacer";
+import { DataTable } from "../components/system/table";
+import { H2, H3, H5, H6 } from "../components/system/typography";
+import { Button } from "../components/ui/button";
+import { Card } from "../components/ui/card";
+import { Separator } from "../components/ui/separator";
+import { useChart, useLatestBlocks, useLatestTxs } from "../utils";
+import { BLOCKS } from "./blocks/metadata";
+import { TRANSACTIONS } from "./transactions/metadata";
 
 export default function Dashboard() {
   const chartdata = useChart();
