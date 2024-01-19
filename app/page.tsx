@@ -13,7 +13,7 @@ import Link from "next/link";
 import Page from "../components/system/page";
 import { Spacer } from "../components/system/spacer";
 import { DataTable } from "../components/system/table";
-import { H2, H3, H5, H6 } from "../components/system/typography";
+import { H2, H44, H5, H6 } from "../components/system/typography";
 import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
 import { Separator } from "../components/ui/separator";
@@ -35,7 +35,7 @@ export default function Dashboard() {
             <ArrowLeftRight className="w-4" />
             <div>
               <H5 className="block pt-[1px] text-muted-foreground">Price</H5>
-              <H3>$0,13</H3>
+              <H44>$0,13</H44>
             </div>
           </div>
 
@@ -47,7 +47,7 @@ export default function Dashboard() {
               <H5 className="block pt-[1px] text-muted-foreground">
                 MarketCap
               </H5>
-              <H3>$293,199,950,773.00</H3>
+              <H44>$293,199,950,773.00</H44>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function Dashboard() {
               <H5 className="block pt-[1px] text-muted-foreground">
                 Circulating Supply
               </H5>
-              <H3>421,164,409</H3>
+              <H44>421,164,409</H44>
             </div>
           </div>
 
@@ -73,21 +73,21 @@ export default function Dashboard() {
               <H5 className="block pt-[1px] text-muted-foreground">
                 Latest Block
               </H5>
-              <H3>#256</H3>
+              <H44>#256</H44>
             </div>
           </div>
         </div>
 
         <Separator orientation="vertical" className="h-auto" />
 
-        <div className="flex flex-col">
+        <div className="flex grow flex-col">
           <div className="flex gap-2 p-2">
             <Gauge className="w-4" />
             <div>
               <H5 className="block pt-[1px] text-muted-foreground">
                 Transactions
               </H5>
-              <H3>2,220.48 M</H3>
+              <H44>2,220.48 M</H44>
             </div>
           </div>
 
@@ -99,7 +99,7 @@ export default function Dashboard() {
               <H5 className="block pt-[1px] text-muted-foreground">
                 Validators
               </H5>
-              <H3>23</H3>
+              <H44>23</H44>
             </div>
           </div>
         </div>
@@ -107,10 +107,10 @@ export default function Dashboard() {
         <Separator orientation="vertical" className="h-auto" />
 
         <div className="animate-fade flex w-96 flex-col p-2">
-          <H5 className="pb-[5px] text-muted-foreground">
-            Activity <H6>(Txs in the last 14 days)</H6>
-          </H5>
-
+          <div className="flex items-center gap-1 pb-[5px] text-muted-foreground">
+            <H5>Activity</H5>
+            <H6>(Txs in the last 14 days)</H6>
+          </div>
           <AreaChart
             className="h-full animate-long-fadeIn"
             data={chartdata}

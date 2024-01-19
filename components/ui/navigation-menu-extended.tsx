@@ -8,7 +8,6 @@ import { useClient } from "../../utils";
 import { cn } from "../../utils/cn";
 import { PageMetadata, withChildren } from "../../utils/types";
 import { NavigationMenuLink } from "@radix-ui/react-navigation-menu";
-import { cva } from "class-variance-authority";
 import Link from "next/link";
 import React from "react";
 
@@ -20,10 +19,20 @@ const reset = `
   data-[state=open]:text-primary
   data-[state=closed]:text-muted-foreground
   data-[state=open]:bg-transparent 
+  data-[active]:bg-transparent 
   focus:bg-transparent 
   bg-transparent 
   hover:bg-transparent
-  outline-none
+  
+  dark:data-[state=open]:text-primary
+  dark:data-[state=closed]:text-muted-foreground
+  dark:data-[state=open]:bg-transparent 
+  dark:data-[active]:bg-transparent 
+  dark:focus:bg-transparent 
+  dark:hover:bg-transparent
+  dark:bg-transparent 
+  
+  outline-none 
   h-auto
   `;
 

@@ -35,7 +35,7 @@ export default function Navbar() {
   const { fullRoute } = useClient();
   const banner = useBanner();
 
-  const [network, setNetwork] = useState("Mainnet");
+  const [network, setNetwork] = useState("mainnet");
 
   return (
     <div className="relative z-50">
@@ -59,7 +59,7 @@ export default function Navbar() {
 
         <Combobox
           className="self-center"
-          items={[{ value: "Mainnet", label: "Mainnet" }]}
+          items={[{ value: "mainnet", label: "mainnet" }]}
           searching="Network"
           value={network}
           onChange={setNetwork}

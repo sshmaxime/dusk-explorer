@@ -46,7 +46,9 @@ export default function Block({ params: { id } }: Props) {
       <Tabs defaultValue="Overview">
         <TabsList>
           <TabsTrigger value="Overview">Overview</TabsTrigger>
-          <TabsTrigger value="More">Coming soon</TabsTrigger>
+          <TabsTrigger value="More" disabled>
+            Coming soon
+          </TabsTrigger>
         </TabsList>
 
         <Spacer extraSmall />

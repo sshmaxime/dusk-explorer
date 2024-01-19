@@ -55,7 +55,7 @@ export function DataTable<TData extends RowProps, TValue>({
   });
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       <Card>
         <Table>
           <TableHeader>

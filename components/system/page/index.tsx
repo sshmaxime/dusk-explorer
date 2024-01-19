@@ -25,17 +25,15 @@ const Page = ({
 }: Props & withChildren) => {
   return (
     <div className={cn("mb-20 mt-8", full ? "" : myAppStyles)}>
-      <div className="flex flex-col">
+      <div className="space-y-0.5">
         {title && <H1>{title}</H1>}
-        {subtitle && <Subtitle className="tracking-tight">{subtitle}</Subtitle>}
+        {subtitle && <Subtitle>{subtitle}</Subtitle>}
       </div>
 
       {separator ? (
         <>
           <Spacer small />
           <Separator />
-          <Spacer small />
-          <Spacer extraSmall />
         </>
       ) : subtitle ? (
         <>
@@ -46,7 +44,7 @@ const Page = ({
         <Spacer />
       )}
 
-      {marginTop && <div className="h-10" />}
+      {marginTop && <div className="my-6" />}
 
       {children}
     </div>

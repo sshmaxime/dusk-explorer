@@ -39,7 +39,7 @@ export function Combobox({
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-[200px] justify-between"
+            className="w-[200px] justify-between capitalize"
           >
             {value
               ? items.find((item) => item.value === value)?.label
@@ -59,7 +59,10 @@ export function Combobox({
                 <CommandItem
                   key={item.value}
                   value={item.value}
-                  className={item.value === value ? "bg-accent" : ""}
+                  className={cn(
+                    "capitalize",
+                    item.value === value ? "bg-accent" : "",
+                  )}
                   onSelect={(currentValue) => {
                     onChange(currentValue === value ? "" : currentValue);
                     setOpen(false);
