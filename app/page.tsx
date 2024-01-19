@@ -111,6 +111,7 @@ export default function Dashboard() {
             <H5>Activity</H5>
             <H6>(Txs in the last 14 days)</H6>
           </div>
+
           <AreaChart
             className="h-full animate-long-fadeIn"
             data={chartdata}

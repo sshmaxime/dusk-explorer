@@ -59,19 +59,6 @@ const SettingsData = [
             </Select>
           ),
       },
-      {
-        title: "Theme",
-        subtitle:
-          "This is the name that will be displayed on your profile and in emails.",
-        Component: ({ mounted, theme, toggleTheme }: Client) =>
-          mounted && (
-            <Switch
-              id="airplane-mode"
-              checked={theme === "dark"}
-              onCheckedChange={toggleTheme}
-            />
-          ),
-      },
     ],
   },
   {

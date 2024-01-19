@@ -1,11 +1,11 @@
 "use client";
 
-import { Spacer } from "../spacer";
-import { H1, Subtitle } from "../typography";
-import { Separator } from "../../ui/separator";
 import { cn } from "../../../utils/cn";
 import { myAppStyles } from "../../../utils/constants/styles";
 import { withChildren } from "../../../utils/types";
+import { Separator } from "../../ui/separator";
+import { Spacer } from "../spacer";
+import { H1, Subtitle } from "../typography";
 
 type Props = {
   title?: string;
@@ -25,9 +25,11 @@ const Page = ({
 }: Props & withChildren) => {
   return (
     <div className={cn("mb-20 mt-8", full ? "" : myAppStyles)}>
-      <div className="space-y-0.5">
-        {title && <H1>{title}</H1>}
-        {subtitle && <Subtitle>{subtitle}</Subtitle>}
+      <div className="flex items-center justify-between">
+        <div className="space-y-0.5">
+          {title && <H1>{title}</H1>}
+          {subtitle && <Subtitle>{subtitle}</Subtitle>}
+        </div>
       </div>
 
       {separator ? (

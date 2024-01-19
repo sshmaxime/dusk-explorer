@@ -40,7 +40,7 @@ const SettingsContent = ({
   children,
 }: SettingsContentProps) => {
   return (
-    <TabsContent value={title}>
+    <TabsContent value={title} className="animate-fadeIn">
       <H3 className="block">{title}</H3>
       <Subtitle2 className="block">{subtitle}</Subtitle2>
       <Separator className="my-6" />

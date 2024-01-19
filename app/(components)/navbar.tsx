@@ -5,8 +5,11 @@ import { SettingsButton } from "../../components/system/settingsButton";
 import { Separator } from "../../components/ui/separator";
 import { useBanner, useClient } from "../../utils";
 
-import { DASHBOARD } from "../metadata";
 import Logo from "@/assets/logo-full.svg";
+import { H5, H6 } from "@/components/system/typography";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import { Banner } from "../../components/system/banner";
 import { Combobox } from "../../components/system/combobox";
 import { ThemeToggler } from "../../components/system/themeToggler";
@@ -21,12 +24,10 @@ import {
   NavigationMenuItem,
   customNavigationMenuTriggerStyle,
 } from "../../components/ui/navigation-menu-extended";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
 import { cn } from "../../utils/cn";
 import { myAppStyles } from "../../utils/constants/styles";
 import { BLOCKS } from "../blocks/metadata";
+import { DASHBOARD } from "../metadata";
 import { TRANSACTIONS } from "../transactions/metadata";
 
 const NavigationArray = [DASHBOARD, BLOCKS, TRANSACTIONS];
@@ -38,10 +39,30 @@ export default function Navbar() {
   const [network, setNetwork] = useState("mainnet");
 
   return (
-    <div className="relative z-50">
+    <div className="relative z-50 backdrop-blur">
       <Banner banner={banner} />
 
-      <header className={cn("flex h-14 w-full backdrop-blur", myAppStyles)}>
+      <header
+        className={cn("flex h-8 items-center justify-between", myAppStyles)}
+      >
+        <div className="flex gap-4">
+          <div className="flex items-center gap-1">
+            <H6 className="font-normal">Dusk Price:</H6>
+            <H6 className="text-blue-400">$123</H6>
+          </div>
+
+          <Separator orientation="vertical" className="h-auto" />
+
+          <div className="flex items-center gap-1">
+            <H6 className="font-normal">Gas:</H6>
+            <H6 className="text-blue-400">2 Gwei</H6>
+          </div>
+        </div>
+      </header>
+
+      <Separator />
+
+      <header className={cn("flex h-14", myAppStyles)}>
         <Link href={"/"} style={{ display: "flex", alignSelf: "center" }}>
           <Image
             src={Logo}

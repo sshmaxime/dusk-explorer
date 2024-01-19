@@ -19,12 +19,16 @@ export default {
       },
     },
     extend: {
+      transitionProperty: {
+        height: "height",
+        spacing: "margin, padding",
+      },
       padding: {
-        "app-sm": "0 15vw 0 15vw",
-        "app-md": "0 10vw 0 10vw",
-        "app-lg": "0 15vw 0 10vw",
+        "app-sm": "0 2vw 0 2vw",
+        "app-md": "0 2vw 0 2vw",
+        "app-lg": "0 5vw 0 5vw",
         "app-xl": "0 8vw 0 8vw",
-        "app-2xl": "0 15vw 0 15vw",
+        "app-2xl": "0 12.5vw 0 12.5vw",
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
@@ -156,6 +160,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        fadeIn: "fadeIn 0.3s ease-in-out",
         "long-fadeIn": "fadeIn 2s ease-in-out",
       },
       boxShadow: {
