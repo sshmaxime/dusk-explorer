@@ -1,0 +1,6 @@
+const MILLISECOND = 1;
+const SECOND = 1000 * MILLISECOND;
+const MINUTE = 60 * SECOND;
+const HOUR = 60 * MINUTE;
+
+export { MILLISECOND, SECOND, MINUTE, HOUR };

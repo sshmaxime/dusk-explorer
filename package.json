@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codegen": "graphql-codegen --watch"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -40,13 +41,19 @@
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-spring/web": "^9.7.3",
+    "@tanstack/react-query": "^5.17.15",
+    "@tanstack/react-query-devtools": "^5.17.18",
+    "@tanstack/react-query-next-experimental": "^5.17.15",
     "@tanstack/react-table": "^8.11.6",
     "@tremor/react": "^3.12.2",
+    "axios": "^1.6.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
     "date-fns": "^3.2.0",
     "embla-carousel-react": "^8.0.0-rc19",
+    "graphql": "^16.8.1",
+    "graphql-request": "5.0.0",
     "lucide-react": "^0.287.0",
     "next": "^14.0.4",
     "next-themes": "^0.2.1",
@@ -65,6 +72,12 @@
     "zustand-x": "^3.0.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
+    "@graphql-codegen/introspection": "4.0.0",
+    "@graphql-codegen/typescript-react-query": "^6.0.0",
+    "@parcel/watcher": "^2.4.0",
+    "@tanstack/eslint-plugin-query": "^5.17.7",
     "@types/node": "^20",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
@@ -75,6 +88,7 @@
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "^3",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }

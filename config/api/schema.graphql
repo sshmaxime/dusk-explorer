@@ -1,0 +1,60 @@
+type Block {
+  header: Header!
+  transactions: [SpentTransaction!]!
+  reward: Int!
+  fees: Int!
+  gasSpent: Int!
+}
+
+type CallData {
+  contractId: String!
+  fnName: String!
+  data: String!
+}
+
+type Header {
+  version: Int!
+  height: Int!
+  prevBlockHash: String!
+  timestamp: Int!
+  hash: String!
+  stateHash: String!
+  generatorBlsPubkey: String!
+  txRoot: String!
+  gasLimit: Int!
+  seed: String!
+  iteration: Int!
+}
+
+type Query {
+  block(height: Float, hash: String): Block
+  tx(hash: String!): SpentTransaction
+  transactions(last: Int!): [SpentTransaction!]!
+  blockTxs(last: Int, range: [Int!], contract: String): [SpentTransaction!]!
+  blocks(last: Int, range: [Int!]): [Block!]!
+  mempoolTxs: [Transaction!]!
+  mempoolTx(hash: String!): Transaction
+}
+
+type SpentTransaction {
+  tx: Transaction!
+  err: String
+  gasSpent: Int!
+  blockHash: String!
+  blockHeight: Int!
+  blockTimestamp: Int!
+  id: String!
+  raw: String!
+}
+
+type Transaction {
+  raw: String!
+  id: String!
+  gasLimit: Int!
+  gasPrice: Int!
+  callData: CallData
+}
+
+schema {
+  query: Query
+}

@@ -1,17 +1,12 @@
 "use client";
 
-import Page from "../../../components/system/page";
-import { H4 } from "../../../components/system/typography";
-import { Separator } from "../../../components/ui/separator";
-import { withChildren } from "../../../utils/types";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "../../../components/ui/tabs";
-import { Card } from "../../../components/ui/card";
-import { Spacer } from "../../../components/system/spacer";
+import Page from "@/components/system/page";
+import { H4 } from "@/components/system/typography";
+import { Separator } from "@/components/ui/separator";
+import { withChildren } from "@/utils/types";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card } from "@/components/ui/card";
+import { Spacer } from "@/components/system/spacer";
 
 type Props = {
   params: {

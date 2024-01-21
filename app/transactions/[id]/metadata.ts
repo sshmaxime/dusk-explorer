@@ -1,4 +1,4 @@
-import { PageMetadata } from "../../../utils/types";
+import { PageMetadata } from "@/utils/types";
 
 export const TRANSACTION: PageMetadata = {
   name: "Transaction",

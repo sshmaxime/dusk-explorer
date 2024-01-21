@@ -1,8 +1,8 @@
 "use client";
 
-import { cn } from "../../../utils/cn";
-import { myAppStyles } from "../../../utils/constants/styles";
-import { withChildren } from "../../../utils/types";
+import { cn } from "@/utils/cn";
+import { myAppStyles } from "@/utils/constants/styles";
+import { withChildren } from "@/utils/types";
 import { Separator } from "../../ui/separator";
 import { Spacer } from "../spacer";
 import { H1, Subtitle } from "../typography";

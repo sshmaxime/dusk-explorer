@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
-import { useClient } from "../../../utils";
+import { useClient } from "@/utils";
 
 export function ProfileButton() {
   const { mounted, toggleTheme } = useClient();

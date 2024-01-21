@@ -16,7 +16,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Client, useClient } from "@/utils";
 import { Tabs, TabsList } from "@radix-ui/react-tabs";
-import Page from "../../../components/system/page";
+import Page from "@/components/system/page";
 
 const SettingsData = [
   {

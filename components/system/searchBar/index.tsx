@@ -13,7 +13,7 @@ import {
   CommandList,
 } from "../../ui/command";
 import { TextIcon } from "../textIcon";
-import { useClient } from "../../../utils";
+import { useClient } from "@/utils";
 
 type Props = {
   text: string;

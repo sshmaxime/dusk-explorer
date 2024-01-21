@@ -11,7 +11,7 @@ import {
   CommandItem,
 } from "../../ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover";
-import { cn } from "../../../utils/cn";
+import { cn } from "@/utils/cn";
 import { Check, ChevronsUpDown } from "lucide-react";
 
 type Props = {

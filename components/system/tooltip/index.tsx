@@ -4,7 +4,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../../ui/tooltip";
-import { withChildren } from "../../../utils/types";
+import { withChildren } from "@/utils/types";
 
 type Props = { text: string } & withChildren;
 

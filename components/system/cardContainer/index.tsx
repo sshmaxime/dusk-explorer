@@ -1,5 +1,5 @@
 import { Card as UICard } from "../../ui/card";
-import { withChildren } from "../../../utils/types";
+import { withChildren } from "@/utils/types";
 import { ReactNode } from "react";
 
 type Props = {

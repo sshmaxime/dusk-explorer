@@ -1,8 +1,8 @@
-import { useStore } from "../../../store";
-import { useClient } from "../../../utils";
-import { cn } from "../../../utils/cn";
-import { myAppStyles } from "../../../utils/constants/styles";
-import { Banner as BannerType } from "../../../utils/types";
+import { useStore } from "@/store";
+import { useClient } from "@/utils";
+import { cn } from "@/utils/cn";
+import { myAppStyles } from "@/utils/constants/styles";
+import { Banner as BannerType } from "@/utils/types";
 import { X } from "lucide-react";
 
 type Props = {

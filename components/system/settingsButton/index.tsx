@@ -1,9 +1,9 @@
 "use client";
 
-import { SETTINGS } from "../../../app/(account)/settings/metadata";
+import { SETTINGS } from "@/app/(account)/settings/metadata";
 import { Button } from "../../ui/button";
-import { useClient } from "../../../utils";
-import { cn } from "../../../utils/cn";
+import { useClient } from "@/utils";
+import { cn } from "@/utils/cn";
 import { Settings } from "lucide-react";
 import Link from "next/link";
 

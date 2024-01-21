@@ -1,5 +1,5 @@
-import { cn } from "../../../utils/cn";
-import { withChildren } from "../../../utils/types";
+import { cn } from "@/utils/cn";
+import { withChildren } from "@/utils/types";
 
 export interface ParagraphProps
   extends React.InputHTMLAttributes<HTMLParagraphElement> {}

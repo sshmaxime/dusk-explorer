@@ -2,10 +2,11 @@ import "./globals.css";
 
 import Navbar from "./(components)/navbar";
 import Footer from "./(components)/footer";
-import { ThemeProvider } from "../config/theme";
+import { ThemeProvider } from "../config/theme/provider";
 import { cn } from "../utils/cn";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
+import QueryProvider from "@/config/query/provider";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -24,17 +25,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-        )}
-      >
-        <ThemeProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
+      <body className={cn("font-sans antialiased", fontSans.variable)}>
+        <QueryProvider>
+          <ThemeProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   );
