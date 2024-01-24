@@ -25,10 +25,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <meta name="format-detection" content="telephone=no" />
       <body className={cn("font-sans antialiased", fontSans.variable)}>
         <QueryProvider>
           <ThemeProvider>
-            <Navbar />
+            {/* <Navbar /> */}
             <main>{children}</main>
             <Footer />
           </ThemeProvider>

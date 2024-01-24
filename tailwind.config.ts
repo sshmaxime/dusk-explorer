@@ -24,7 +24,7 @@ export default {
         spacing: "margin, padding",
       },
       padding: {
-        "app-sm": "0 2vw 0 2vw",
+        "app-sm": "0 12px 0 12px",
         "app-md": "0 2vw 0 2vw",
         "app-lg": "0 5vw 0 5vw",
         "app-xl": "0 8vw 0 8vw",

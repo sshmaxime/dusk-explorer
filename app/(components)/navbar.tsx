@@ -39,7 +39,7 @@ export default function Navbar() {
   const [network, setNetwork] = useState("mainnet");
 
   return (
-    <div className="relative z-50 backdrop-blur">
+    <div className="relative z-50 backdrop-blur md:block">
       <Banner banner={banner} />
 
       <header

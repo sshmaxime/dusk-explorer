@@ -268,8 +268,10 @@ export const useLatestTxs = () => {
     hash: string;
     timestamp: number;
     blockHash: string;
-    gasPrice: BigInt;
-    gasLimit: BigInt;
+    gas: {
+      gasPrice: BigInt;
+      gasLimit: BigInt;
+    };
     fee: BigInt;
     type: string;
     status: "Success" | "Pending" | "Fail";
@@ -280,8 +282,7 @@ export const useLatestTxs = () => {
       hash: "0x1234567890x123456789",
       timestamp: 1705075749,
       blockHash: "0x123456789",
-      gasPrice: BigInt(1234567890),
-      gasLimit: BigInt(1705075749),
+      gas: { gasPrice: BigInt(1234567890), gasLimit: BigInt(1705075749) },
       fee: BigInt(124),
       type: "Contract",
       status: "Pending",
@@ -290,8 +291,7 @@ export const useLatestTxs = () => {
       hash: "0x123456789",
       timestamp: 1705075749,
       blockHash: "0x123456789",
-      gasPrice: BigInt(1234567890),
-      gasLimit: BigInt(1705075749),
+      gas: { gasPrice: BigInt(1234567890), gasLimit: BigInt(1705075749) },
       fee: BigInt(124),
       type: "Transfer",
       status: "Success",
@@ -300,8 +300,7 @@ export const useLatestTxs = () => {
       hash: "0x123456789",
       timestamp: 1705075749,
       blockHash: "0x123456789",
-      gasPrice: BigInt(1234567890),
-      gasLimit: BigInt(1705075749),
+      gas: { gasPrice: BigInt(1234567890), gasLimit: BigInt(1705075749) },
       fee: BigInt(124),
       type: "Transfer",
       status: "Fail",
@@ -310,8 +309,7 @@ export const useLatestTxs = () => {
       hash: "0x123456789",
       timestamp: 1705075749,
       blockHash: "0x123456789",
-      gasPrice: BigInt(1234567890),
-      gasLimit: BigInt(1705075749),
+      gas: { gasPrice: BigInt(1234567890), gasLimit: BigInt(1705075749) },
       fee: BigInt(124),
       type: "Transfer",
       status: "Success",
@@ -320,8 +318,7 @@ export const useLatestTxs = () => {
       hash: "0x123456789",
       timestamp: 1705075749,
       blockHash: "0x123456789",
-      gasPrice: BigInt(1234567890),
-      gasLimit: BigInt(1705075749),
+      gas: { gasPrice: BigInt(1234567890), gasLimit: BigInt(1705075749) },
       fee: BigInt(124),
       type: "Contract",
       status: "Success",
@@ -330,8 +327,7 @@ export const useLatestTxs = () => {
       hash: "0x123456789",
       timestamp: 1705075749,
       blockHash: "0x123456789",
-      gasPrice: BigInt(1234567890),
-      gasLimit: BigInt(1705075749),
+      gas: { gasPrice: BigInt(1234567890), gasLimit: BigInt(1705075749) },
       fee: BigInt(124),
       type: "Transfer",
       status: "Success",
@@ -340,8 +336,7 @@ export const useLatestTxs = () => {
       hash: "0x123456789",
       timestamp: 1705075749,
       blockHash: "0x123456789",
-      gasPrice: BigInt(1234567890),
-      gasLimit: BigInt(1705075749),
+      gas: { gasPrice: BigInt(1234567890), gasLimit: BigInt(1705075749) },
       fee: BigInt(124),
       type: "Transfer",
       status: "Success",
@@ -350,8 +345,7 @@ export const useLatestTxs = () => {
       hash: "0x123456789",
       timestamp: 1705075749,
       blockHash: "0x123456789",
-      gasPrice: BigInt(1234567890),
-      gasLimit: BigInt(1705075749),
+      gas: { gasPrice: BigInt(1234567890), gasLimit: BigInt(1705075749) },
       fee: BigInt(124),
       type: "Transfer",
       status: "Success",
@@ -360,8 +354,7 @@ export const useLatestTxs = () => {
       hash: "0x123456789",
       timestamp: 1705075749,
       blockHash: "0x123456789",
-      gasPrice: BigInt(1234567890),
-      gasLimit: BigInt(1705075749),
+      gas: { gasPrice: BigInt(1234567890), gasLimit: BigInt(1705075749) },
       fee: BigInt(124),
       type: "Transfer",
       status: "Success",
@@ -370,8 +363,7 @@ export const useLatestTxs = () => {
       hash: "0x123456789",
       timestamp: 1705075749,
       blockHash: "0x123456789",
-      gasPrice: BigInt(1234567890),
-      gasLimit: BigInt(1705075749),
+      gas: { gasPrice: BigInt(1234567890), gasLimit: BigInt(1705075749) },
       fee: BigInt(124),
       type: "Transfer",
       status: "Success",
@@ -400,15 +392,16 @@ export const useLatestTxs = () => {
     },
     {
       header: "Gas",
+      accessorKey: "gas",
       cell: ({ row: { original: block } }) => (
         <div className="flex flex-col justify-center">
           <div className="text-[13px]">
             <span className="text-xs text-muted-foreground">Price:</span>{" "}
-            {block.gasPrice.toString()}
+            {block.gas.gasPrice.toString()}
           </div>
           <div className="text-[13px]">
             <span className="text-xs text-muted-foreground">Limit:</span>{" "}
-            {block.gasLimit.toString()}
+            {block.gas.gasLimit.toString()}
           </div>
         </div>
       ),

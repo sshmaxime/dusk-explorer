@@ -50,8 +50,8 @@ export default function Footer() {
 
         <Separator className="dark:bg-accent-foreground dark:opacity-10" />
 
-        <div className="flex justify-between px-2">
-          <div className="grid grid-flow-col space-x-40 py-10">
+        <div className="flex flex-col justify-between px-2 md:flex-row">
+          <div className="grid grid-flow-row gap-8 py-10 md:grid-flow-col md:gap-40">
             <Image src={LogoNice} alt="" className="h-20 w-20 self-center" />
 
             <div className="flex flex-col gap-1">
@@ -75,7 +75,7 @@ export default function Footer() {
 
         <Separator className="dark:bg-accent-foreground dark:opacity-10" />
 
-        <div className="flex justify-between px-2 py-2">
+        <div className="flex flex-col gap-1 px-2 py-2 md:flex-row md:justify-between md:gap-0">
           <H6 className="font-normal">
             Duskscan{" "}
             <span className="text-xs font-semibold">

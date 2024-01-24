@@ -29,10 +29,10 @@ export default function Dashboard() {
 
   return (
     <Page title="Dashboard">
-      <Card className="flex space-x-5 p-2">
+      <Card className="flex flex-col space-x-5 p-2 md:flex-row">
         <div className="flex grow flex-col">
           <div className="flex gap-2 p-2">
-            <ArrowLeftRight className="w-4" />
+            <ArrowLeftRight className="w-8 md:w-4" />
             <div>
               <H5 className="block pt-[1px] text-muted-foreground">Price</H5>
               <H44>$0,13</H44>
@@ -42,7 +42,7 @@ export default function Dashboard() {
           <Separator className="my-2" />
 
           <div className="flex gap-2 p-2">
-            <Globe className="w-4" />
+            <Globe className="w-8 md:w-4" />
             <div>
               <H5 className="block pt-[1px] text-muted-foreground">
                 MarketCap
@@ -50,13 +50,15 @@ export default function Dashboard() {
               <H44>$293,199,950,773.00</H44>
             </div>
           </div>
+
+          <Separator className="my-2 block md:hidden" />
         </div>
 
         <Separator orientation="vertical" className="h-auto" />
 
         <div className="flex grow flex-col">
           <div className="flex gap-2 p-2">
-            <Gauge className="w-4" />
+            <Gauge className="w-8 md:w-4" />
             <div>
               <H5 className="block pt-[1px] text-muted-foreground">
                 Circulating Supply
@@ -68,7 +70,7 @@ export default function Dashboard() {
           <Separator className="my-2" />
 
           <div className="flex gap-2 p-2">
-            <Container className="w-4" />
+            <Container className="w-8 md:w-4" />
             <div>
               <H5 className="block pt-[1px] text-muted-foreground">
                 Latest Block
@@ -82,7 +84,7 @@ export default function Dashboard() {
 
         <div className="flex grow flex-col">
           <div className="flex gap-2 p-2">
-            <Gauge className="w-4" />
+            <Gauge className="w-8 md:w-4" />
             <div>
               <H5 className="block pt-[1px] text-muted-foreground">
                 Transactions
@@ -94,7 +96,7 @@ export default function Dashboard() {
           <Separator className="my-2" />
 
           <div className="flex gap-2 p-2">
-            <Network className="w-4" />
+            <Network className="w-8 md:w-4" />
             <div>
               <H5 className="block pt-[1px] text-muted-foreground">
                 Validators
@@ -106,7 +108,7 @@ export default function Dashboard() {
 
         <Separator orientation="vertical" className="h-auto" />
 
-        <div className="animate-fade flex w-96 flex-col p-2">
+        <div className="animate-fade flex flex-col p-2 md:w-96">
           <div className="flex items-center gap-1 pb-[5px] text-muted-foreground">
             <H5>Activity</H5>
             <H6>(Txs in the last 14 days)</H6>
@@ -131,8 +133,8 @@ export default function Dashboard() {
       <Spacer />
       <Spacer />
 
-      <div className="grid grid-cols-7 gap-16">
-        <div className="col-span-3">
+      <div className="grid grid-cols-7 gap-y-16 md:gap-x-16">
+        <div className="col-span-full md:col-span-3">
           <div className="flex justify-between">
             <H2>Latest Blocks</H2>
             <div className="flex place-self-end">
@@ -142,7 +144,7 @@ export default function Dashboard() {
                 className="group m-0 mr-4 h-auto gap-2 p-0 hover:bg-transparent"
               >
                 <Link href={BLOCKS.href}>
-                  <H5>All Blocks</H5>
+                  <H5>View all</H5>
                   <MoveRight className="h-4 w-4 transform self-center transition duration-700 group-hover:translate-x-2" />
                 </Link>
               </Button>
@@ -152,7 +154,7 @@ export default function Dashboard() {
           <DataTable columns={headerLatestBlocks} data={dataLatestBlocks} />
         </div>
 
-        <div className="col-span-4">
+        <div className="col-span-full md:col-span-4">
           <div className="flex justify-between">
             <H2>Latest Transactions</H2>
             <div className="flex place-self-end">
@@ -162,7 +164,7 @@ export default function Dashboard() {
                 className="group m-0 mr-4 h-auto gap-2 p-0 hover:bg-transparent"
               >
                 <Link href={TRANSACTIONS.href}>
-                  <H5>All Transactions</H5>
+                  <H5>View all</H5>
                   <MoveRight className="h-4 w-4 transform self-center transition duration-700 group-hover:translate-x-2" />
                 </Link>
               </Button>

@@ -33,11 +33,13 @@ type RowProps = object & {
 type DataTableProps<TData extends RowProps, TValue> = {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  toHide?: string[];
 } & Props;
 
 export function DataTable<TData extends RowProps, TValue>({
   columns,
   data,
+  toHide,
   paginationOptions,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -51,6 +53,9 @@ export function DataTable<TData extends RowProps, TValue>({
     getSortedRowModel: getSortedRowModel(),
     state: {
       sorting,
+      columnVisibility: {
+        // TODO
+      },
     },
   });
 
@@ -82,9 +87,10 @@ export function DataTable<TData extends RowProps, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
+                  className="h-16"
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="px-4 py-3">
+                    <TableCell key={cell.id} className="px-4">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),
