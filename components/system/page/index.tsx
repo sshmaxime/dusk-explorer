@@ -47,7 +47,7 @@ const Page = ({
         <Spacer />
       )}
 
-      {marginTop && <div className="my-6" />}
+      {(separator || marginTop) && <div className="my-6" />}
 
       {children}
     </div>

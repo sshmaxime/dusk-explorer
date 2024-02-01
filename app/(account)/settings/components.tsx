@@ -1,4 +1,4 @@
-import { H3, H5, Subtitle2 } from "@/components/system/typography";
+import { H2, H22, H3, H5, Subtitle2 } from "@/components/system/typography";
 import { Separator } from "@/components/ui/separator";
 import { withChildren } from "@/utils/types";
 import { TabsContent, TabsTrigger } from "@radix-ui/react-tabs";
@@ -41,8 +41,8 @@ const SettingsContent = ({
 }: SettingsContentProps) => {
   return (
     <TabsContent value={title}>
-      <H3 className="block">{title}</H3>
-      <Subtitle2 className="block">{subtitle}</Subtitle2>
+      <H22 className="pb-[2px]">{title}</H22>
+      <Subtitle2>{subtitle}</Subtitle2>
       <Separator className="my-6" />
 
       <div className="grid space-y-6">{children}</div>

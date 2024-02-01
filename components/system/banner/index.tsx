@@ -17,11 +17,12 @@ export const Banner = ({ banner }: Props) => {
 
   return (
     <header
-      className={`${
-        isOpen ? "h-8" : "h-0"
-      } z-50 flex w-full items-center bg-muted text-sm backdrop-blur duration-500`}
+      className={cn(
+        isOpen ? "h-8" : "h-0 opacity-0",
+        `z-50 flex w-full items-center bg-muted text-sm backdrop-blur duration-500`,
+      )}
     >
-      <div className={cn("flex w-full flex-row justify-between", myAppStyles)}>
+      <div className={cn(myAppStyles, "flex w-full flex-row justify-between")}>
         <div className="w-20"></div>
         <div className="flex flex-row justify-center">
           <p className="text-center">{banner.message}</p>

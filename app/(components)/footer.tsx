@@ -1,5 +1,8 @@
+import { PRIVACY } from "@/app/(company)/(policies)/privacy/metadata";
+import { TERMS } from "@/app/(company)/(policies)/terms/metadata";
 import Logo from "@/assets/logo-full.svg";
 import LogoNice from "@/assets/nice.svg";
+import { URLS } from "@/config/constants";
 import { SiDiscord, SiReddit, SiTwitter } from "@icons-pack/react-simple-icons";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +24,7 @@ export default function Footer() {
               variant="ghost"
               className="h-auto bg-transparent p-0"
             >
-              <Link href="">
+              <Link href={URLS.discord}>
                 <SiDiscord className="h-5 w-5" />
               </Link>
             </Button>
@@ -31,7 +34,7 @@ export default function Footer() {
               variant="ghost"
               className="h-auto bg-transparent p-0"
             >
-              <Link href="">
+              <Link href={URLS.twitter}>
                 <SiTwitter className="h-5 w-5" />
               </Link>
             </Button>
@@ -41,7 +44,7 @@ export default function Footer() {
               variant="ghost"
               className="h-auto bg-transparent p-0"
             >
-              <Link href="">
+              <Link href={URLS.reddit}>
                 <SiReddit className="h-5 w-5" />
               </Link>
             </Button>
@@ -56,14 +59,12 @@ export default function Footer() {
 
             <div className="flex flex-col gap-1">
               <H3 className="mb-4 font-bold">Legal</H3>
-              <H5 className="font-normal">Privacy Policy</H5>
-              <H5 className="font-normal">Terms of use</H5>
-            </div>
-
-            <div className="flex flex-col gap-1">
-              <H3 className="mb-4 font-bold">Legal</H3>
-              <H5 className="font-normal">Privacy Policy</H5>
-              <H5 className="font-normal">Terms of use</H5>
+              <Link href={PRIVACY.href}>
+                <H5 className="font-normal">Privacy Policy</H5>
+              </Link>
+              <Link href={TERMS.href}>
+                <H5 className="font-normal">Terms of Service</H5>
+              </Link>
             </div>
           </div>
 
@@ -93,17 +94,7 @@ export default function Footer() {
               </Button>
             </H6>
           </div>
-
-          <div className="flex items-center gap-1">
-            <H6 className="font-normal">
-              Donations:
-              <Button variant="ghost" className="h-auto p-0">
-                &nbsp;
-                <H6 className="underline underline-offset-4">0x123456789</H6>
-                &nbsp;
-              </Button>
-            </H6>
-          </div>
+          <div />
         </div>
       </div>
     </div>

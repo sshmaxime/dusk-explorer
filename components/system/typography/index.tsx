@@ -14,8 +14,10 @@ const H2 = ({ children }: withChildren & ParagraphProps) => (
   <p className="text-2xl font-bold tracking-tight">{children}</p>
 );
 
-const H22 = ({ children }: withChildren & ParagraphProps) => (
-  <p className="text-xl font-bold tracking-tight">{children}</p>
+const H22 = ({ children, className }: withChildren & ParagraphProps) => (
+  <p className={cn("text-lg font-bold tracking-tight", className)}>
+    {children}
+  </p>
 );
 
 const H3 = ({ children, className }: withChildren & ParagraphProps) => (

@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={cn("font-sans antialiased", fontSans.variable)}>
         <QueryProvider>
           <ThemeProvider>
-            {/* <Navbar /> */}
+            <Navbar />
             <main>{children}</main>
             <Footer />
           </ThemeProvider>
